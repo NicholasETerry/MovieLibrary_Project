@@ -23,7 +23,8 @@ namespace WebAPISample.Controllers
         public IActionResult Get()
         {
             // Retrieve all movies from db logic
-            return Ok(new string[] { "movie1 string", "movie2 string" });
+            List<Movie> allMovies = _context.Movies.ToList();
+            return Ok(allMovies);
         }
 
         // GET api/movie/5
@@ -31,8 +32,9 @@ namespace WebAPISample.Controllers
         public IActionResult Get(int id)
         {
             // Retrieve movie by id from db logic
+            var movie = _context.Movies.FirstOrDefault(m => m.MovieId == id);
             // return Ok(movie);
-            return Ok();
+            return Ok(movie);
         }
 
         // POST api/movie
@@ -40,7 +42,9 @@ namespace WebAPISample.Controllers
         public IActionResult Post([FromBody]Movie value)
         {
             // Create movie in db logic
-            return Ok();
+            _context.Movies.Add(value);
+            _context.SaveChanges();
+            return Ok(value);
         }
 
         // PUT api/movie
@@ -48,7 +52,9 @@ namespace WebAPISample.Controllers
         public IActionResult Put([FromBody] Movie movie)
         {
             // Update movie in db logic
-            return Ok();
+            _context.Movies.Update(movie);
+            _context.SaveChanges();
+            return Ok(movie);
         }
 
         // DELETE api/movie/5
@@ -56,6 +62,9 @@ namespace WebAPISample.Controllers
         public IActionResult Delete(int id)
         {
             // Delete movie from db logic
+            var deleteMovie = _context.Movies.FirstOrDefault(d => d.MovieId == id);
+            _context.Movies.Remove(deleteMovie);
+            _context.SaveChanges();
             return Ok();
         }
     }
