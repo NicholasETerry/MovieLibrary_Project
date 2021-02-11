@@ -32,7 +32,17 @@
         e.preventDefault();
     }
 
+    $(document).ready(function(){
+        $.get("https://localhost:44325/api/movie", function(data){
+            for(let i = 0; i < data.length; i++){
+                $("movieDetails").append(`<div>
+                <div>Title: ${JSON.stringify(data[i].title)}</div>
+                <div>Director: ${JSON.stringify(data[i].director)}</div>
+                <div>Genre: ${JSON.stringify(data[i].genre)}</div>
+                </div><br>`);
+
+            }
+        })
+    })
     $('#my-form').submit( processForm );
 })(jQuery);
-
-//As a film enthusiast, I want to be able to add a new movie with details, including title, genre, and director name.
