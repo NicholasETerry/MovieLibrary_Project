@@ -45,21 +45,18 @@ header::after {
 }
 
 #movieDetails {
-    height: 400px;
     margin-top: 50px;
     border: red solid 1px;
     
 }
 
 #updateMovies {
-    height: 400px;
     margin-top: 50px;
     border: black solid 2px;
 
 }
 
 #addMovies {
-    height: 400px;
     margin-top: 50px;
     border: purple solid 2px;
 }
