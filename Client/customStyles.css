@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+
+#navLogo {
+    width: 60px;
+}
+
+html,
+body {
+
+    margin: 0;
+    height: 100%;
+    font-size: 1rem;
+}
+
+header * {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    background-image: url(image/movieSplash.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+}
+
+#movieDetails {
+    height: 400px;
+    margin-top: 50px;
+    border: red solid 1px;
+    
+}
+
+#updateMovies {
+    height: 400px;
+    margin-top: 50px;
+    border: black solid 2px;
+
+}
+
+#addMovies {
+    height: 400px;
+    margin-top: 50px;
+    border: purple solid 2px;
+}
+.page-header {
+    margin-top: 4rem;
+}
+
+#wrapper {
+    border: green solid 2px;
+    max-width:  75%;
+    margin: auto;
+}
+
