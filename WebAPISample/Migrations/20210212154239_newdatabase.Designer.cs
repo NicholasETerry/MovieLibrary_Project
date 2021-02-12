@@ -9,12 +9,8 @@ using WebAPISample.Data;
 namespace WebAPISample.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-<<<<<<< HEAD:WebAPISample/Migrations/20210212154607_init.Designer.cs
-    [Migration("20210212154607_init")]
-=======
 <<<<<<< HEAD:WebAPISample/Migrations/20210212153925_init.Designer.cs
     [Migration("20210212153925_init")]
->>>>>>> 75721a3cc6e3e13bb4b52ef68c4f7f2eeaa2e80c:WebAPISample/Migrations/20210212153925_init.Designer.cs
     partial class init
 =======
     [Migration("20210212154239_newdatabase")]

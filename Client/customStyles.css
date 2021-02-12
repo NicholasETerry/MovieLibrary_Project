@@ -46,14 +46,17 @@ header::after {
 
 #movieDetails {
     margin-top: 50px;
-    border: red solid 1px;
-    
+    border: red solid 1px;    
+}
+
+#searchForMovie {
+    margin-top: 50px;
+    border: yellow solid 2px;
 }
 
 #updateMovies {
     margin-top: 50px;
     border: black solid 2px;
-
 }
 
 #addMovies {
