@@ -19,9 +19,31 @@
             }
         });
 
+        $(document).ready(function(){
+            $.post("https://localhost:44325/api/movie", function(data){
+                $("#movieDetails").append(`<div>
+                <div> Title: ${JSON.stringify(data.title)}</div>
+                <div> Title: ${JSON.stringify(data.director)}</div>
+                <div> Title: ${JSON.stringify(data.genre)}</div>
+                </div><br>`);
+            })
+        })
+
         e.preventDefault();
     }
 
+    $(document).ready(function(){
+        $.get("https://localhost:44325/api/movie", function(data){
+            for(let i = 0; i < data.length; i++){
+                $("movieDetails").append(`<div>
+                <div>Title: ${JSON.stringify(data[i].title)}</div>
+                <div>Director: ${JSON.stringify(data[i].director)}</div>
+                <div>Genre: ${JSON.stringify(data[i].genre)}</div>
+                </div><br>`);
+
+            }
+        })
+    })
     $('#my-form').submit( processForm );
 })(jQuery);
 
