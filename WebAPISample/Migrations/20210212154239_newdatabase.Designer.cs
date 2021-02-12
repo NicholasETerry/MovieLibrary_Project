@@ -9,8 +9,8 @@ using WebAPISample.Data;
 namespace WebAPISample.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210211175833_init")]
-    partial class init
+    [Migration("20210212154239_newdatabase")]
+    partial class newdatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

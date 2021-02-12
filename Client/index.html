@@ -64,19 +64,17 @@
           (placeholder will change later)
         </h4>
         <div id="container-fluid">
-          <form id="my-form">
-            <input type="text" name="title" placeholder="Title" />
-            <input type="text" name="genre" placeholder="Genre" />
-            <input type="text" name="director" placeholder="Director" />
+            <input id="postTitle" type="text" name="title" placeholder="Title" />
+            <input id="postGenre"type="text" name="genre" placeholder="Genre" />
+            <input id="postDirector"type="text" name="director" placeholder="Director" />
 
-            <button id="sendGet" type="submit">Submit</button>
-          </form>
+            <button onclick="postMovie()">Submit</button>
         </div>
       </section>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
