@@ -15,7 +15,6 @@ namespace WebAPISample.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Seed data - needs migration
             modelBuilder.Entity<Movie>()
 
               .HasData(
