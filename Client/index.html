@@ -53,9 +53,36 @@
       <section id="movieDetails">
         <h4>Section for Movie Details (placeholder for now)</h4>
       </section>
+      
+      <section id="searchForMovie">
+        <h4>Section for search for a movie</h4>
+        <form id="my-form">
+          <input type="text" name="title" placeholder="Title" />
+          <input type="text" name="genre" placeholder="Genre" />
+          <input type="text" name="director" placeholder="Director" />
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
 
       <section id="updateMovies">
         <h4>Section to Update Movies (placeholder for now)</h4>
+
+
+
+        <!-- <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Genre</th>
+              <th scope="col">Director's Name</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="myTable">
+
+          </tbody>
+        </table> -->
       </section>
 
       <section id="addMovies">
@@ -73,6 +100,13 @@
           </form>
         </div>
       </section>
+    </div>
+    <div>
+      <input type="hidden" id="movieIdEdit"/>
+      <input  id="movieTitleEdit" placeholder="Edit Movie Title"/>
+      <input  id="movieDirectorEdit" placeholder="Edit Director"/>
+      <input  id="movieGenreEdit" placeholder="Genre"/>
+      <button onclick="updateMovie()">Save</button>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
