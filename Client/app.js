@@ -24,3 +24,10 @@
 
     $('#my-form').submit( processForm );
 })(jQuery);
+
+//Update the details of a movie, including title, genre, and director name
+(function (){
+    function updateMovie(currentMovie){
+        
+    }
+})
