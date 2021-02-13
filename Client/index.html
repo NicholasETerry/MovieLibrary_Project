@@ -60,7 +60,7 @@
           <input type="text" name="title" placeholder="Title" />
           <input type="text" name="genre" placeholder="Genre" />
           <input type="text" name="director" placeholder="Director" />
-
+          <!--Edit button needed to call handleUpdate function--> 
           <button type="submit">Submit</button>
         </form>
       </section>
@@ -101,10 +101,10 @@
     </div>
     <div>
       <input type="hidden" id="movieIdEdit"/>
-      <input  id="movieTitleEdit" placeholder="Edit Movie Title"/>
-      <input  id="movieDirectorEdit" placeholder="Edit Director"/>
-      <input  id="movieGenreEdit" placeholder="Genre"/>
-      <button onclick="updateMovie()">Save</button>
+      <input  id="movieTitleEdit" type="text" name="title" placeholder="Edit Movie Title"/>
+      <input  id="movieDirectorEdit" type="text" name="director" placeholder="Edit Director"/>
+      <input  id="movieGenreEdit" type="text" name="genre" placeholder="Genre"/>
+      <button onclick="updateMovie()" >Save</button>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
