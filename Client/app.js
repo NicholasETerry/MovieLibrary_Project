@@ -22,7 +22,7 @@
 function postMovie(){
     let movieTitle = $("#postTitle").val();
     let movieDirector =$("#postDirector").val();
-    let movieGenre = $("postGenre").val();
+    let movieGenre = $("#postGenre").val();
     let dict = {
         director: movieDirector,
         title :movieTitle,
@@ -35,7 +35,7 @@ function postMovie(){
         contentType: 'application/json',
         data: JSON.stringify(dict),
         success: function( data, textStatus, jQxhr ){
-            console.log("yee");
+            console.log("post successful. check database for correct information.");
         },
         error: function( jqXhr, textStatus, errorThrown ){
             console.log( errorThrown );
