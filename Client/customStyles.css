@@ -73,3 +73,21 @@ header::after {
     margin: auto;
 }
 
+.updateMovieButton {
+    padding: 20px 10px;
+    /* border-radius: 5px; */
+    display: block;
+    width: 130px;
+    margin: 10px auto 0px auto;
+}
+
+#editMovieInfo {
+    margin: auto;
+    text-align: center;
+}
+ .addMovieButton {
+    padding: 20px 10px;
+    display: block;
+    width: 130px;
+    margin: 10px auto 0px auto;
+ }

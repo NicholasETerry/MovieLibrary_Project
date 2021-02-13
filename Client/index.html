@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Thulium Movie Library</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="customStyles.css" />
   </head>
@@ -47,42 +47,53 @@
       </div>
     </nav>
     <header id="header">
-      <!-- <h1>PLACE HOLDER FOR NOW</h1> -->
     </header>
     <div id="wrapper">
       <section id="movieDetails">
-        <h4>Section for Movie Details (placeholder for now)</h4> 
+        <h4>Section for Movie Details (placeholder for now)</h4>
+
+        <table id="movieTable" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Movie Title</th>
+              <th>Director</th>
+              <th>Genre</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+
+          </tbody>
+        </table>
+
       </section>
       
       <section id="searchForMovie">
-        <h4>Section for search for a movie</h4>
-        <form id="my-form">
+        <h5>Section for search for a movie</h5>
+        <div id="">
           <input type="text" name="title" placeholder="Title" />
           <input type="text" name="genre" placeholder="Genre" />
           <input type="text" name="director" placeholder="Director" />
 
-          <button type="submit">Submit</button>
-        </form>
+          <button class="btn btn-primary btn-sm" type="submit">Submit</button>
+        </div>
       </section>
 
       <section id="updateMovies">
         <h4>Section to Update Movies (placeholder for now)</h4>
+        <div id="listOfMoviesToUpdate">
+        </div>
 
+        <h5 id="editMovieInfo">Edit Movie Information</h5><br>
+        <div class="input-group input-group-lg">
+          <input type="hidden" id="movieIdEdit"/>
+          <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieTitleEdit" placeholder="Edit Movie Title"/>
+          <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieDirectorEdit" placeholder="Edit Director"/>
+          <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieGenreEdit" placeholder="Edit Genre"/>
+        </div>
+        <div class="updateMovieButton">
+        <button onclick="updateMovie()" type="button" class="btn btn-primary btn-sm">SAVE</button>
+        </div>
 
-
-        <!-- <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Genre</th>
-              <th scope="col">Director's Name</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody class="myTable">
-
-          </tbody>
-        </table> -->
       </section>
 
       <section id="addMovies">
@@ -90,22 +101,17 @@
           Type in the movie title, genre, and director's name to add a movie
           (placeholder will change later)
         </h4>
-        <div id="container-fluid">
-            <input id="postTitle" type="text" name="title" placeholder="Title" />
-            <input id="postGenre"type="text" name="genre" placeholder="Genre" />
-            <input id="postDirector"type="text" name="director" placeholder="Director" />
-
-            <button onclick="postMovie()">Submit</button>
-        </div>
+        <div class="input-group input-group-lg">
+            <input id="postTitle" type="text" name="title" placeholder="Title" aria-describedby="inputGroup-sizing-lg" class="form-control" />
+            <input id="postGenre"type="text" name="genre" placeholder="Genre" aria-describedby="inputGroup-sizing-lg" class="form-control" />
+            <input id="postDirector"type="text" name="director" placeholder="Director" aria-describedby="inputGroup-sizing-lg" class="form-control"/>
+          </div>
+          <div class="addMovieButton">
+            <button type="button" class="btn btn-primary btn-sm" onclick="postMovie()">Submit</button>
+          </div>
       </section>
     </div>
-    <div>
-      <input type="hidden" id="movieIdEdit"/>
-      <input  id="movieTitleEdit" placeholder="Edit Movie Title"/>
-      <input  id="movieDirectorEdit" placeholder="Edit Director"/>
-      <input  id="movieGenreEdit" placeholder="Genre"/>
-      <button onclick="updateMovie()">Save</button>
-    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>

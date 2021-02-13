@@ -2,11 +2,7 @@
 
 namespace WebAPISample.Migrations
 {
-<<<<<<< HEAD:WebAPISample/Migrations/20210212153925_init.cs
     public partial class init : Migration
-=======
-    public partial class newdatabase : Migration
->>>>>>> 98d6ec32d9969cda2302b50cc4eb07f6315860d8:WebAPISample/Migrations/20210212154239_newdatabase.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

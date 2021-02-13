@@ -1,18 +1,36 @@
+//display list of movies in the movie details section
+$(document).ready(function(){
+    $.get("https://localhost:44325/api/movie", function(data){
+        data.map(function(el){
+        var movie = '';
+        $.each(data, function(){
+            movie += '<tr>';
+            movie += '<td>'+el.title+'</td>';
+            movie += '<td>'+el.director+'</td>';
+            movie += '<td>'+el.genre+'</td>';
+            movie += '</tr>';
+        })
+        $('#tableBody').append(movie);
+        })
+    })
+})
+
+
+
 //display list of movies in the update section
 $(document).ready(function(){
     $.get("https://localhost:44325/api/movie", function(data){
         data.map(function(el){
-            $("#updateMovies").append(`<div>
+            $("#listOfMoviesToUpdate").append(`<div>
             <div>Title: ${JSON.stringify(el.title)}</div>
             <div>Director: ${JSON.stringify(el.director)}</div>
             <div>Genre: ${JSON.stringify(el.genre)}</div>
             </div>
             <div>
-            <button onclick="handleUpdate(${JSON.stringify(el.movieId)})">Edit</button>
-            
-            </div>
-            <br>`);
-        })
+            <button type="button" class="btn btn-primary btn-sm" onclick="handleUpdate(${JSON.stringify(el.movieId)})">Edit</button>            
+            </div>            
+            <br>`);            
+        })        
     })
 })
 
@@ -26,13 +44,12 @@ function handleUpdate(movieId){
 }
 
 //function to edit a movie
-
     function updateMovie() {
         var dict = {
             MovieId: $("#movieIdEdit").val(),
-            Title: this["title"].value,
-            Genre: this["genre"].value,
-            Director: this["director"].value
+            Title: this["title"].val(),
+            Genre: this["genre"].val(),
+            Director: this["director"].val(),
         };
 
         $.ajax({
@@ -48,7 +65,8 @@ function handleUpdate(movieId){
                 console.log(errorThrown);
             }
         });
-    }});
+    };
+
 function postMovie(){
     let movieTitle = $("#postTitle").val();
     let movieDirector =$("#postDirector").val();
