@@ -33,44 +33,53 @@ $(document).ready(function(){
         })        
     })
 })
+function findMovie(id){
 
+}
+// handleUpdate is call by button onclick right above this comment.
 function handleUpdate(movieId){
     $.get("https://localhost:44325/api/movie/" +movieId, function(data){
         $("#movieIdEdit").val(data.movieId);
         $("#movieTitleEdit").val(data.title);
         $("#movieDirectorEdit").val(data.director);
         $("#movieGenreEdit").val(data.genre);
+        tempId = movieId;
     })
 }
 
 //function to edit a movie
-    function updateMovie() {
-        var dict = {
-            MovieId: $("#movieIdEdit").val(),
-            Title: this["title"].val(),
-            Genre: this["genre"].val(),
-            Director: this["director"].val(),
-        };
 
-        $.ajax({
-            url: 'https://localhost:44325/api/movie',
-            type: 'PUT',
-            dataType: 'json',
-            contentType: 'application/json',
-            data: JSON.stringify(dict),            
-            success: function(data, textStatus, jqXhr){//success callback function
-                console.log("Updated!!")
-            },
-            error: function (jgXhr, textStatus, errorThrown) {
-                console.log(errorThrown);
-            }
-        });
+function updateMovie() {
+    
+    let movieTitle = $("#movieTitleEdit").val();
+    let movieDirector = $("#movieDirectorEdit").val();
+    let movieGenre = $("#movieGenreEdit").val();
+    var dict = {
+        movieId : tempId,
+        director : movieDirector,
+        title : movieTitle,
+        genre : movieGenre,
     };
 
+    $.ajax({
+        url: 'https://localhost:44325/api/movie',
+        dataType: 'json',
+        type: 'put',
+        contentType: 'application/json',
+        data: JSON.stringify(dict),            
+        success: function(data, textStatus, jQxhr){//success callback function
+            console.log("Updated!!")
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+            console.log(errorThrown);
+        }
+    });
+    getAfterPut(dict);
+};
 function postMovie(){
     let movieTitle = $("#postTitle").val();
     let movieDirector =$("#postDirector").val();
-    let movieGenre = $("postGenre").val();
+    let movieGenre = $("#postGenre").val();
     let dict = {
         director: movieDirector,
         title :movieTitle,
@@ -83,12 +92,13 @@ function postMovie(){
         contentType: 'application/json',
         data: JSON.stringify(dict),
         success: function( data, textStatus, jQxhr ){
-            console.log("yee");
+            console.log("post successful. check database for correct information.");
         },
         error: function( jqXhr, textStatus, errorThrown ){
             console.log( errorThrown );
         }
     });
+    
 
             // $.post("https://localhost:44325/api/movie",JSON.stringify(dict), function(data){
             //     $("#movieDetails").append(`<div>
@@ -98,8 +108,22 @@ function postMovie(){
             //         </div><br>`);
             //     })
                    
-}
-
+};
+function getAfterPut(dictonary){
+    $.ajax({
+        url: 'https://localhost:44325/api/movie',
+        dataType: 'json',
+        type: 'get',
+        contentType: 'application/json',
+        data: JSON.stringify(dictonary),            
+        success: function(data, textStatus, jQxhr){//success callback function
+            console.log("get after posting to database")
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+            console.log(errorThrown);
+        }
+    });
+};
 //     $("#sendGet").click(function(e){
 //         e.preventDefault();
 //         $(document).ready(function(){
