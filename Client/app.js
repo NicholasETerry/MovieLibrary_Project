@@ -17,9 +17,6 @@ $(document).ready(function(){
         })
     })
 })
-function findMovie(id){
-
-}
 // handleUpdate is call by button onclick right above this comment.
 function handleUpdate(movieId){
     $.get("https://localhost:44325/api/movie/" +movieId, function(data){
@@ -52,7 +49,8 @@ function updateMovie() {
         contentType: 'application/json',
         data: JSON.stringify(dict),            
         success: function(data, textStatus, jQxhr){//success callback function
-            console.log("Updated!!")
+            console.log("Updated!!");
+            
         },
         error: function (jqXhr, textStatus, errorThrown) {
             console.log(errorThrown);
@@ -94,19 +92,33 @@ function postMovie(){
                    
 };
 function getAfterPut(dictonary){
-    $.ajax({
-        url: 'https://localhost:44325/api/movie',
-        dataType: 'json',
-        type: 'get',
-        contentType: 'application/json',
-        data: JSON.stringify(dictonary),            
-        success: function(data, textStatus, jQxhr){//success callback function
-            console.log("get after posting to database")
-        },
-        error: function (jqXhr, textStatus, errorThrown) {
-            console.log(errorThrown);
-        }
-    });
+    // $.ajax({
+    //     url: 'https://localhost:44325/api/movie',
+    //     dataType: 'json',
+    //     type: 'get',
+    //     contentType: 'application/json',
+    //     data: JSON.stringify(dictonary),            
+    //     success: function(data, textStatus, jQxhr){//success callback function
+    //         console.log("get after posting to database")
+    //     },
+    //     error: function (jqXhr, textStatus, errorThrown) {
+    //         console.log(errorThrown);
+    //     }
+    // });
+    $.get("https://localhost:44325/api/movie", function(data){
+        data.map(function(el){
+            $("#updateMovies").append(`<div>
+            <div>Title: ${JSON.stringify(el.title)}</div>
+            <div>Director: ${JSON.stringify(el.director)}</div>
+            <div>Genre: ${JSON.stringify(el.genre)}</div>
+            </div>
+            <div>
+            <button onclick="handleUpdate(${JSON.stringify(el.movieId)})">Edit</button> 
+            
+            </div>
+            <br>`);
+        })
+    })
 };
 //     $("#sendGet").click(function(e){
 //         e.preventDefault();
