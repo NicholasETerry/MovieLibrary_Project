@@ -1,73 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thulium Movie Library</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="customStyles.css" />
-  </head>
-  <body>
-    <nav id="" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#"
-          ><img id="navLogo" src="image/movieLogo.jpg" alt="logo"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#movieDetails">Movie Details</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#updateMovies">Update Movies</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#addMovies">Add Movies</a>
-            </li>
-          </ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thulium Movie Library</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="customStyles.css" />
+  <link rel="icon" href="image/movieLogo.jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img id="navLogo" src="image/movieLogo.jpg" alt="logo" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Home <span class="sr-only"></span></a>
+          <a class="nav-item nav-link" href="#movieDetails">Movie Details</a>
+          <a class="nav-item nav-link" href="#updateMovies">Update Movies</a>
+          <a class="nav-item nav-link" href="#addMovies">Add Movies</a>
         </div>
       </div>
-    </nav>
-    <header id="header">
-    </header>
-    <div id="wrapper">
-      <section id="movieDetails">
-        <h4>Section for Movie Details (placeholder for now)</h4>
-
-        <table id="movieTable" class="table table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th>Movie Title</th>
-              <th>Director</th>
-              <th>Genre</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-
-          </tbody>
-        </table>
-
-      </section>
-      
-      <section id="searchForMovie">
+    </div>
+  </nav>
+  <header id="header"></header>
+  <section id="movieDetails">
+    <h4 class="text-center">All-Time Great Movies</h4>
+    <br />
+    <table id="movieTable" class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Movie Title</th>
+          <th>Director</th>
+          <th>Genre</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </section>
+  <!-- <section id="searchForMovie">
         <h5>Section for search for a movie</h5>
         <div id="">
           <input type="text" name="title" placeholder="Title" />
@@ -76,45 +55,65 @@
 
           <button class="btn btn-primary btn-sm" type="submit">Submit</button>
         </div>
-      </section>
-
-      <section id="updateMovies">
-        <h4>Section to Update Movies (placeholder for now)</h4>
-        <div id="listOfMoviesToUpdate">
-        </div>
-
-        <h5 id="editMovieInfo">Edit Movie Information</h5><br>
-        <div class="input-group input-group-lg">
-          <input type="hidden" id="movieIdEdit"/>
-          <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieTitleEdit" placeholder="Edit Movie Title"/>
-          <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieDirectorEdit" placeholder="Edit Director"/>
-          <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieGenreEdit" placeholder="Edit Genre"/>
-        </div>
-        <div class="updateMovieButton">
-        <button onclick="updateMovie()" type="button" class="btn btn-primary btn-sm">SAVE</button>
-        </div>
-
-      </section>
-
-      <section id="addMovies">
-        <h4>
-          Type in the movie title, genre, and director's name to add a movie
-          (placeholder will change later)
-        </h4>
-        <div class="input-group input-group-lg">
-            <input id="postTitle" type="text" name="title" placeholder="Title" aria-describedby="inputGroup-sizing-lg" class="form-control" />
-            <input id="postGenre"type="text" name="genre" placeholder="Genre" aria-describedby="inputGroup-sizing-lg" class="form-control" />
-            <input id="postDirector"type="text" name="director" placeholder="Director" aria-describedby="inputGroup-sizing-lg" class="form-control"/>
-          </div>
-          <div class="addMovieButton">
-            <button type="button" class="btn btn-primary btn-sm" onclick="postMovie()">Submit</button>
-          </div>
-      </section>
+      </section> -->
+  <section id="updateMovies">
+    <div id="customUpdate">
+      <h4 class="text-center">
+        Help Contribute to The Greatest Movie FANDOM
+      </h4>
+      <br />
+      <div id="listOfMoviesToUpdate"></div>
+      <br />
+      <h5 class="text-center">Edit Movie Information</h5>
+      <br />
+      <div class="input-group input-group-lg">
+        <input type="hidden" id="movieIdEdit" />
+        <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieTitleEdit"
+          placeholder="Edit Movie Title" />
+        <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieDirectorEdit"
+          placeholder="Edit Director" />
+        <input aria-describedby="inputGroup-sizing-lg" class="form-control" id="movieGenreEdit"
+          placeholder="Edit Genre" />
+      </div>
+      <div class="updateMovieButton">
+        <button onclick="updateMovie()" type="button" class="btn btn-primary btn-sm">
+          Save
+        </button>
+      </div>
     </div>
+  </section>
+  <section class="rounded-pill" id="addMovies">
+    <div class="customAdd">
+      <h4 class="text-center">Add a Movie to the All-Time Great List</h4>
+      <br />
+      <div class="input-group input-group-lg">
+        <input id="postTitle" type="text" name="title" placeholder="Title" aria-describedby="inputGroup-sizing-lg"
+          class="form-control" />
+        <input id="postDirector" type="text" name="director" placeholder="Director"
+          aria-describedby="inputGroup-sizing-lg" class="form-control" />
+        <input id="postGenre" type="text" name="genre" placeholder="Genre" aria-describedby="inputGroup-sizing-lg"
+          class="form-control" />
+      </div>
+      <div class="addMovieButton">
+        <button type="button" class="btn btn-primary btn-sm" onclick="postMovie()">
+          Submit
+        </button>
+      </div>
+    </div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+<section id="lab_social_icon_footer">
+  <div class="container">
+    <div class="text-center center-block">
+      <a href="https://www.linkedin.com/"><i id="social-linkedin" class="fa fa-linkedin-square fa-3x social"></i></a>
+      <a href="https://www.github.com/"><i id="social-github" class="fa fa-github-square fa-3x social"></i></a>
+      <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+    </div>
+  </div>
+</section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
 </html>
