@@ -1,21 +1,17 @@
-//display list of movies in the movie details section
+//display list of movies in a table inside the movie detail section
 $(document).ready(function(){
     $.get("https://localhost:44325/api/movie", function(data){
-        data.map(function(el){
         var movie = '';
         $.each(data, function(){
             movie += '<tr>';
-            movie += '<td>'+el.title+'</td>';
-            movie += '<td>'+el.director+'</td>';
-            movie += '<td>'+el.genre+'</td>';
+            movie += '<td>'+this.title+'</td>';
+            movie += '<td>'+this.director+'</td>';
+            movie += '<td>'+this.genre+'</td>';
             movie += '</tr>';
         })
         $('#tableBody').append(movie);
         })
     })
-})
-
-
 
 //display list of movies in the update section
 $(document).ready(function(){
