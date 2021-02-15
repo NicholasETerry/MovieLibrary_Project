@@ -45,7 +45,7 @@ var tempId = 0;
                     movie += '<td>'+this.genre+'</td>';
                     movie += '</tr>';
                 })
-                $('#tableBody').append(movie);
+                $('#tableBody').append(movie).fadeIn(1000);
                 })
         }
         function updateListUpdate(){
@@ -59,7 +59,7 @@ var tempId = 0;
                     <div>
                     <button type="button" class="btn btn-primary btn-sm" onclick="handleUpdate(${JSON.stringify(el.movieId)})">Edit</button>            
                     </div>            
-                    <br>`);            
+                    <br>`).fadeIn(1000);            
                 })        
             })
         }
@@ -96,8 +96,8 @@ var tempId = 0;
                 data: JSON.stringify(dict),            
                 success: function(data, textStatus, jQxhr){//success callback function
                     console.log("Updated!!");
-                    $("#listOfMoviesToUpdate").empty();
-                    $("#tableBody").empty();
+                    $("#listOfMoviesToUpdate").empty().fadeOut(1000);
+                    $("#tableBody").empty().fadeOut(1000);
                     updateListUpdate();
                     tableBodyUpdate();
                 },
@@ -124,7 +124,9 @@ var tempId = 0;
                 data: JSON.stringify(dict),
                 success: function( data, textStatus, jQxhr ){
                     console.log("post successful. check database for correct information.");
+                    $("#listOfMoviesToUpdate").fadeOut(1000)
                     $("#listOfMoviesToUpdate").empty();
+                    $("#tableBody").fadeOut(1000)
                     $("#tableBody").empty();
                     updateListUpdate();
                     tableBodyUpdate();
