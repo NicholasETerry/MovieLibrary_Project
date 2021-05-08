@@ -1,150 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lora:wght@500&family=Raleway:wght@500&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lora:wght@500&family=Raleway:wght@500&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #navLogo {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 html,
 body {
-    background-color: #38425A;
-    margin: 0;
-    height: 100%;
-    font-size: 1rem;
+  background-color: #38425a;
+  margin: 0;
+  height: 100%;
+  font-size: 1rem;
 }
 
 header * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 header {
-    background-image: url(image/movieSplash.jpg);
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    position: relative;
+  background-image: url(image/movieSplash.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
 }
 
 header::after {
-    content: "";
-    position: absolute;
-    background-color: #000;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.3;
+  content: "";
+  position: absolute;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
 }
 
 #movieDetails {
-
-    border-radius: 25px;
-    padding: 30px;
-    margin: auto;
-    width: 80%;
-    background-color: #F0F1F4;
-    margin-top: 50px;
-    font-family: 'Raleway', sans-serif;
+  border-radius: 25px;
+  padding: 30px;
+  margin: auto;
+  width: 80%;
+  background-color: #f0f1f4;
+  margin-top: 50px;
+  font-family: "Raleway", sans-serif;
 }
 
 #searchForMovie {
-    margin-top: 50px;
-    border: yellow solid 2px;
+  margin-top: 50px;
+  border: yellow solid 2px;
 }
 
 #updateMovies {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 #customUpdate {
-    margin-top: 50px;
-    margin: auto;
-    background-color: #726C76;
-    border-radius: 15px 50px;
-    padding: 20px;
-    width: 60%;
-    font-family: 'Lora', serif;
-    color: #F0F1F4;
+  margin-top: 50px;
+  margin: auto;
+  background-color: #726c76;
+  border-radius: 15px 50px;
+  padding: 20px;
+  width: 60%;
+  font-family: "Lora", serif;
+  color: #f0f1f4;
 }
-#listOfMoviesToUpdate{
-    font-size: large;
-    font-family: 'Lora', serif;
-    color: #f0f1f4ed;
-    padding-left: 4rem;
+#listOfMoviesToUpdate {
+  font-size: large;
+  font-family: "Lora", serif;
+  color: #f0f1f4ed;
+  padding-left: 4rem;
 }
 
 #addMovies {
-    padding-top: 20px;
-    background-color: #818BA5;
-    margin-top: 50px;
+  padding-top: 20px;
+  background-color: #818ba5;
+  margin-top: 50px;
 }
 .page-header {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .updateMovieButton {
-    padding: 20px 10px;
-    display: block;
-    width: 130px;
-    margin: 10px auto 0px auto;
+  padding: 20px 10px;
+  display: block;
+  width: 130px;
+  margin: 10px auto 0px auto;
 }
 
- .addMovieButton {
-    padding: 20px 10px;
-    display: block;
-    width: 130px;
-    margin: 10px auto 0px auto;
- }
-
- .customAdd{
-    font-family: 'Lato', sans-serif;
-     margin: auto;
-     width: 50%;
- }
- 
- #lab_social_icon_footer {
-    padding: 40px 0;
-    background-color: #38425A;
-  }
-  
-  #lab_social_icon_footer a {
-    color: #F0F1F4;
-  }
-  
-  #lab_social_icon_footer .social:hover {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-  }
-  
-  #lab_social_icon_footer .social {
-    -webkit-transform: scale(0.8);  
-    -moz-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-  }
-  
-  #lab_social_icon_footer #social-linkedin:hover {
-    color: #2977c9;
+.addMovieButton {
+  padding: 20px 10px;
+  display: block;
+  width: 130px;
+  margin: 10px auto 0px auto;
 }
 
-  #lab_social_icon_footer #social-github:hover {
-      color: black;
-  }
-  
-  #lab_social_icon_footer #social-em:hover {
-    color: #f39c12;
-  }
+.customAdd {
+  font-family: "Lato", sans-serif;
+  margin: auto;
+  width: 50%;
+}
+
+#lab_social_icon_footer {
+  padding: 40px 0;
+  background-color: #38425a;
+}
+
+#lab_social_icon_footer a {
+  color: #f0f1f4;
+}
+
+#lab_social_icon_footer .social:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#lab_social_icon_footer .social {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+
+#lab_social_icon_footer #social-linkedin:hover {
+  color: #2977c9;
+}
+
+#lab_social_icon_footer #social-github:hover {
+  color: black;
+}
+
+#lab_social_icon_footer #social-em:hover {
+  color: #f39c12;
+}
